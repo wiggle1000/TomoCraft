@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tomocraft:block/test_block"
+    }
+  }
+}

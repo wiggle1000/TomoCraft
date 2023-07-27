@@ -1,3 +1,20 @@
 {
+  "block.tomocraft.small_tile_black": "Small Black Tiles",
+  "block.tomocraft.small_tile_blue": "Small Blue Tiles",
+  "block.tomocraft.small_tile_brown": "Small Brown Tiles",
+  "block.tomocraft.small_tile_cyan": "Small Cyan Tiles",
+  "block.tomocraft.small_tile_gray": "Small Gray Tiles",
+  "block.tomocraft.small_tile_green": "Small Green Tiles",
+  "block.tomocraft.small_tile_light_blue": "Small Light Blue Tiles",
+  "block.tomocraft.small_tile_light_gray": "Small Light Gray Tiles",
+  "block.tomocraft.small_tile_lime": "Small Lime Tiles",
+  "block.tomocraft.small_tile_magenta": "Small Magenta Tiles",
+  "block.tomocraft.small_tile_orange": "Small Orange Tiles",
+  "block.tomocraft.small_tile_pink": "Small Pink Tiles",
+  "block.tomocraft.small_tile_purple": "Small Purple Tiles",
+  "block.tomocraft.small_tile_red": "Small Red Tiles",
+  "block.tomocraft.small_tile_white": "Small White Tiles",
+  "block.tomocraft.small_tile_yellow": "Small Yellow Tiles",
+  "block.tomocraft.test_block": "Test Block",
   "itemGroup.tomocraft.main": "TomoCraft"
 }
