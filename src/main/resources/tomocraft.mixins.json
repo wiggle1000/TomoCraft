@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "com.tomoteam.mixin",
+	"package": "com.tomoteam.tomocraft.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
 		"ExampleMixin"

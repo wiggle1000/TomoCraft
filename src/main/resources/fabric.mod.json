@@ -16,16 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			{
-				"value": "com.tomoteam.tomocraft.TomoCraft",
-				"adapter": "kotlin"
-			}
+			"com.tomoteam.tomocraft.TomoCraft"
 		],
 		"fabric-datagen": [
-			{
-				"value": "com.tomoteam.tomocraft.TomoCraftDataGenerator",
-				"adapter": "kotlin"
-			}
+			"com.tomoteam.tomocraft.datagen.TomoCraftDataGenerator"
 		]
 	},
 	"mixins": [
@@ -35,8 +29,7 @@
 		"fabricloader": ">=0.14.21",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*",
-		"fabric-language-kotlin": ">=1.9.0"
+		"fabric-api": "*"
 	},
 	"suggests": {
 		"another-mod": "*"

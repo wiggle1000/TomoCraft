@@ -1,4 +1,4 @@
-package com.tomoteam.mixin;
+package com.tomoteam.tomocraft.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
