@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-27T18:23:58.6935875	TomoCraft/Model Definitions
+// 1.20.1	2023-08-01T14:13:22.1350277	TomoCraft/Model Definitions
 9bed606537a64b8a3cbc140fcdff1e0454cdd044 assets\tomocraft\blockstates\small_tile_black.json
 36a6dd02d5307b1b86958e6e000d18ed601de176 assets\tomocraft\models\item\small_tile_light_gray.json
 0775c9853ad7f5d862a1832067be9f735b7e1e5e assets\tomocraft\blockstates\small_tile_light_blue.json
@@ -6,8 +6,8 @@
 a66f968d0c18470526ad70b06ab6823df4192c0a assets\tomocraft\models\item\small_tile_cyan.json
 51901b996e0b06a774da449cfa6ee0886d2f5f13 assets\tomocraft\blockstates\small_tile_orange.json
 228ba305dc8e3c72a48badf183ed77ee6bcca8f8 assets\tomocraft\blockstates\small_tile_blue.json
-93418f13e9336b4b0a72d526d044cf6e0c56e15c assets\tomocraft\models\item\small_tile_white.json
 3c19ecea6b0ce8c8a3db611a7976ae8f0d0e12d7 assets\tomocraft\models\item\small_tile_yellow.json
+93418f13e9336b4b0a72d526d044cf6e0c56e15c assets\tomocraft\models\item\small_tile_white.json
 cdb63be94b989bd8233afb94b713eb3e2453f40a assets\tomocraft\blockstates\small_tile_white.json
 1fa22daa695d0d4707b43230d8c88f20009a8042 assets\tomocraft\models\item\small_tile_pink.json
 5742a812ae7900249394ddeef5424e612b4150d0 assets\tomocraft\models\block\small_tile_red.json
@@ -34,6 +34,8 @@ be8337809bcf219e0d67b865cab00114da5c1c03 assets\tomocraft\models\block\small_til
 e6c4c19dcfa8d6a197f85f4f912cdfe19fd190d5 assets\tomocraft\models\block\test_block.json
 1b7226d0062fd2daf15e8dc13eb8efc5a31b9ebf assets\tomocraft\models\block\small_tile_pink.json
 cff6074d9a694ed319fd3f6cbcb01550f37e7691 assets\tomocraft\models\block\small_tile_black.json
+e28fca8ee14ab892e958e8a79fe1d1a2b533bd02 assets\tomocraft\blockstates\deer_scare.json
+1fcd08ca9c58edaa095a1794b7263af1a8d97440 assets\tomocraft\models\item\deer_scare.json
 80ea89942adeebae805c7c64d2a957fd8ebb4ac7 assets\tomocraft\models\block\small_tile_cyan.json
 ad34d8a50b41f688b08c315b3d14d0e35c01af87 assets\tomocraft\models\block\small_tile_orange.json
 038ebc11692a0a12fa89abd1ade173e89e8ddf78 assets\tomocraft\models\block\small_tile_green.json

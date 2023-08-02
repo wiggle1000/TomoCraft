@@ -1,0 +1,18 @@
+{
+  "deer_scare": {
+    "subtitle": "subtitles.tomocraft.deer_scare",
+    "sounds": [
+      "tomocraft:deer_scare1",
+      "tomocraft:deer_scare2",
+      "tomocraft:deer_scare3"
+    ]
+  },
+  "fountain": {
+    "subtitle": "subtitles.tomocraft.fountain",
+    "sounds": [
+      "tomocraft:fountain1",
+      "tomocraft:fountain2",
+      "tomocraft:fountain3"
+    ]
+  }
+}

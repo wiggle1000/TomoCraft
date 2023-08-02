@@ -18,6 +18,9 @@
 		"main": [
 			"com.tomoteam.tomocraft.TomoCraft"
 		],
+		"client": [
+			"com.tomoteam.tomocraft.client.ClientInit"
+		],
 		"fabric-datagen": [
 			"com.tomoteam.tomocraft.datagen.TomoCraftDataGenerator"
 		]
@@ -29,7 +32,8 @@
 		"fabricloader": ">=0.14.21",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"geckolib": ">=4.2.1"
 	},
 	"suggests": {
 		"another-mod": "*"

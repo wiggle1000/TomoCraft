@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import software.bernie.geckolib.GeckoLib;
 
 public class TomoCraft implements ModInitializer
 {
@@ -17,5 +18,7 @@ public class TomoCraft implements ModInitializer
     {
         LOGGER.info("Beginning mod initialization. Hii!!! :D :D :D");
         TomoRegistry.init();
+        LOGGER.info("Initializing GeckoLib");
+        GeckoLib.initialize();
     }
 }

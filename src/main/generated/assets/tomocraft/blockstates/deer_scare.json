@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "tomocraft:block/deer_scare",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "tomocraft:block/deer_scare",
+      "y": 0
+    },
+    "facing=south": {
+      "model": "tomocraft:block/deer_scare",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "tomocraft:block/deer_scare",
+      "y": 270
+    }
+  }
+}
