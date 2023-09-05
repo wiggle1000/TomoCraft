@@ -1,0 +1,7 @@
+{
+  "parent": "tomocraft:block/bean_bag",
+  "textures": {
+    "0": "tomocraft:block/bean_bag_gray",
+    "particle": "tomocraft:block/bean_bag_gray"
+  }
+}

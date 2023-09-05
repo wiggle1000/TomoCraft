@@ -1,6 +1,8 @@
 package com.tomoteam.tomocraft;
 
 import com.tomoteam.tomocraft.blocks.BlockDeerScare;
+import com.tomoteam.tomocraft.blocks.RotatableBlock;
+import com.tomoteam.tomocraft.blocks.SeatBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
@@ -13,6 +15,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.DyeColor;
+import net.minecraft.util.shape.VoxelShape;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,11 +32,13 @@ public class TomoBlocks
             );
 
     public static HashMap<DyeColor, Block> SMALL_TILES = new HashMap<>();
+    public static HashMap<DyeColor, Block> BEAN_BAG = new HashMap<>();
 
     public static void RegisterBlocks()
     {
         addBlock(TEST_BLOCK, "test_block");
         addDyeableBlock(SMALL_TILES, "small_tile", FabricBlockSettings.create().strength(4.0f));
+        addDyeableSeat(BEAN_BAG, "bean_bag", FabricBlockSettings.create().strength(4.0f).noCollision(), Block.createCuboidShape(1,0,1,15,8,15), 6D);
         addBlockWithBE(DEER_SCARE, "deer_scare", BlockDeerScare.DeerScareBlockEntity::new);
     }
 
@@ -55,6 +60,26 @@ public class TomoBlocks
         for (DyeColor value : DyeColor.values())
         {
             Block block = new Block(settings);
+            blockMap.put(value, Registry.register(Registries.BLOCK, ModId(name+"_"+value.getName()), block));
+            BlockItem bi = Registry.register(Registries.ITEM,  ModId(name+"_"+value.getName()), new BlockItem(block, new FabricItemSettings()));
+            TomoRegistry.creativeTabBlockItems.add(bi);
+        }
+    }
+    public static void addDyeableBlockWithFacing(HashMap<DyeColor, Block> blockMap, String name, FabricBlockSettings settings, VoxelShape northShape)
+    {
+        for (DyeColor value : DyeColor.values())
+        {
+            Block block = new RotatableBlock(settings, northShape);
+            blockMap.put(value, Registry.register(Registries.BLOCK, ModId(name+"_"+value.getName()), block));
+            BlockItem bi = Registry.register(Registries.ITEM,  ModId(name+"_"+value.getName()), new BlockItem(block, new FabricItemSettings()));
+            TomoRegistry.creativeTabBlockItems.add(bi);
+        }
+    }
+    public static void addDyeableSeat(HashMap<DyeColor, Block> blockMap, String name, FabricBlockSettings settings, VoxelShape northShape, double sitHeight)
+    {
+        for (DyeColor value : DyeColor.values())
+        {
+            Block block = new SeatBlock(settings, northShape, sitHeight);
             blockMap.put(value, Registry.register(Registries.BLOCK, ModId(name+"_"+value.getName()), block));
             BlockItem bi = Registry.register(Registries.ITEM,  ModId(name+"_"+value.getName()), new BlockItem(block, new FabricItemSettings()));
             TomoRegistry.creativeTabBlockItems.add(bi);

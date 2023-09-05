@@ -1,5 +1,7 @@
 package com.tomoteam.tomocraft.datagen;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.tomoteam.tomocraft.TomoBlocks;
 import com.tomoteam.tomocraft.TomoCraft;
 import com.tomoteam.tomocraft.TomoItems;
@@ -31,6 +33,7 @@ public class ModelProvider extends FabricModelProvider
         //gen.registerSimpleState(TomoBlocks.DEER_SCARE.block());
         genDyedModelsSimpleCubeAll(TomoBlocks.SMALL_TILES, gen);
         //gen.modelCollector.accept(TomoCraft.ModId("block/deer_scare_moving"), );
+        registerHorizFacingDyedModel(TomoBlocks.BEAN_BAG, TomoCraft.ModId("block/bean_bag"), gen);
     }
 
     public static final BlockStateVariantMap HORIZONTAL_FACING_ROTATION_VARIANT_MAP = BlockStateVariantMap.create(Properties.HORIZONTAL_FACING)
@@ -46,11 +49,44 @@ public class ModelProvider extends FabricModelProvider
         );
         gen.registerParentedItemModel(block, modelId);
     }
+    public void registerHorizFacingDyedModel(HashMap<DyeColor, Block> blockMap, Identifier modelIdBase, BlockStateModelGenerator gen)
+    {
+        for (DyeColor key: blockMap.keySet())
+        {
+            Block value = blockMap.get(key);
+            registerHorizFacingModel(value, modelIdBase.withSuffixedPath("_"+key.toString()), gen);
+        }
+        genDyedModelsFromParent(blockMap, modelIdBase, gen);
+    }
     public void genDyedModelsSimpleCubeAll(HashMap<DyeColor, Block> blockMap, BlockStateModelGenerator gen)
     {
         for (Block value : blockMap.values())
         {
             gen.registerSimpleCubeAll(value);
+        }
+    }
+    public void genDyedModelsFromParent(HashMap<DyeColor, Block> blockMap, Identifier modelIdBase, BlockStateModelGenerator gen)
+    {
+        for (DyeColor key: blockMap.keySet())
+        {
+            Block value = blockMap.get(key);
+            gen.modelCollector.accept(modelIdBase.withSuffixedPath("_"+key.toString()),
+                    //Use this as a shell class to just generate a whole json basically
+                    new SimpleModelSupplier(modelIdBase)
+                    {
+                        @Override
+                        public JsonElement get()
+                        {
+                            JsonObject jsonObject = new JsonObject();
+                            jsonObject.addProperty("parent", modelIdBase.toString());
+                            JsonObject textures = new JsonObject();
+                            textures.addProperty("0", modelIdBase.withSuffixedPath("_"+key.toString()).toString());
+                            textures.addProperty("particle", modelIdBase.withSuffixedPath("_"+key.toString()).toString());
+                            jsonObject.add("textures", textures);
+                            return jsonObject;
+                        }
+                    });
+
         }
     }
 

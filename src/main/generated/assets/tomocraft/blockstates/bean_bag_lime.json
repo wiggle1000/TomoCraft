@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "tomocraft:block/bean_bag_lime",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "tomocraft:block/bean_bag_lime",
+      "y": 0
+    },
+    "facing=south": {
+      "model": "tomocraft:block/bean_bag_lime",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "tomocraft:block/bean_bag_lime",
+      "y": 270
+    }
+  }
+}

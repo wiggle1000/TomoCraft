@@ -32,6 +32,7 @@ public class TomoRegistry
         TomoBlocks.RegisterBlocks();
         TomoItems.RegisterItems();
         TomoSounds.RegisterSounds();
+        TomoEntities.RegisterEntities();
 
         //add items to group, in order of appearance in group
         ItemGroupEvents.modifyEntriesEvent(itemGroup).register(content -> {
