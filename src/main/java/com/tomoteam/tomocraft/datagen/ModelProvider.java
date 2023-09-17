@@ -30,10 +30,20 @@ public class ModelProvider extends FabricModelProvider
     {
         gen.registerSimpleCubeAll(TomoBlocks.TEST_BLOCK);
         registerHorizFacingModel(TomoBlocks.DEER_SCARE.block(), TomoCraft.ModId("block/deer_scare"), gen);
+        registerHorizFacingModel(TomoBlocks.TOASTER.block(), TomoCraft.ModId("block/toaster"), gen);
         //gen.registerSimpleState(TomoBlocks.DEER_SCARE.block());
         genDyedModelsSimpleCubeAll(TomoBlocks.SMALL_TILES, gen);
         //gen.modelCollector.accept(TomoCraft.ModId("block/deer_scare_moving"), );
         registerHorizFacingDyedModel(TomoBlocks.BEAN_BAG, TomoCraft.ModId("block/bean_bag"), gen);
+    }
+
+
+    @Override
+    public void generateItemModels(ItemModelGenerator gen)
+    {
+        gen.register(TomoItems.SLICED_BREAD, GENERATED);
+        gen.register(TomoItems.TOAST, GENERATED);
+        gen.register(TomoItems.BURNT_TOAST, GENERATED);
     }
 
     public static final BlockStateVariantMap HORIZONTAL_FACING_ROTATION_VARIANT_MAP = BlockStateVariantMap.create(Properties.HORIZONTAL_FACING)
@@ -88,11 +98,5 @@ public class ModelProvider extends FabricModelProvider
                     });
 
         }
-    }
-
-    @Override
-    public void generateItemModels(ItemModelGenerator gen)
-    {
-        //gen.register(TomoItems., GENERATED);
     }
 }

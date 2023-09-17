@@ -19,12 +19,13 @@ public class TomoRegistry
     public static final RegistryKey<ItemGroup> itemGroup = RegistryKey.of(RegistryKeys.ITEM_GROUP, ModId("main"));
 
     public static ArrayList<Item> creativeTabBlockItems = new ArrayList<>();
+    public static ArrayList<Item> creativeTabItemItems = new ArrayList<>();
 
     public static void init() {
         //Create item group
         Registry.register(Registries.ITEM_GROUP, itemGroup,
                 FabricItemGroup.builder()
-                .icon(() -> new ItemStack(Items.ALLIUM))
+                .icon(() -> new ItemStack(TomoBlocks.TOASTER.block()))
                 .displayName(Text.translatable("itemGroup."+TomoCraft.MOD_ID+".main"))
                 .build()
         );
@@ -34,7 +35,14 @@ public class TomoRegistry
         TomoSounds.RegisterSounds();
         TomoEntities.RegisterEntities();
 
-        //add items to group, in order of appearance in group
+        //add items to group, in order of appearance in group (items)
+        ItemGroupEvents.modifyEntriesEvent(itemGroup).register(content -> {
+            for (Item item : creativeTabItemItems)
+            {
+                content.add(item);
+            }
+        });
+        //add items to group, in order of appearance in group (blocks)
         ItemGroupEvents.modifyEntriesEvent(itemGroup).register(content -> {
             for (Item item : creativeTabBlockItems)
             {

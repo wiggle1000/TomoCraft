@@ -1,6 +1,7 @@
 package com.tomoteam.tomocraft;
 
 import com.tomoteam.tomocraft.blocks.BlockDeerScare;
+import com.tomoteam.tomocraft.blocks.BlockToaster;
 import com.tomoteam.tomocraft.blocks.RotatableBlock;
 import com.tomoteam.tomocraft.blocks.SeatBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -29,7 +30,11 @@ public class TomoBlocks
     public static final BERecord<BlockDeerScare.DeerScareBlockEntity> DEER_SCARE = new BERecord(
             new BlockDeerScare(FabricBlockSettings.create().strength(4.0f)),
             BlockDeerScare.DeerScareBlockEntity::new
-            );
+    );
+    public static final BERecord<BlockToaster.ToasterBlockEntity> TOASTER = new BERecord(
+            new BlockToaster(FabricBlockSettings.create().strength(4.0f)),
+            BlockToaster.ToasterBlockEntity::new
+    );
 
     public static HashMap<DyeColor, Block> SMALL_TILES = new HashMap<>();
     public static HashMap<DyeColor, Block> BEAN_BAG = new HashMap<>();
@@ -40,6 +45,7 @@ public class TomoBlocks
         addDyeableBlock(SMALL_TILES, "small_tile", FabricBlockSettings.create().strength(4.0f));
         addDyeableSeat(BEAN_BAG, "bean_bag", FabricBlockSettings.create().strength(4.0f).noCollision(), Block.createCuboidShape(1,0,1,15,8,15), 6D);
         addBlockWithBE(DEER_SCARE, "deer_scare", BlockDeerScare.DeerScareBlockEntity::new);
+        addBlockWithBE(TOASTER, "toaster", BlockToaster.ToasterBlockEntity::new);
     }
 
     public static void addBlock(Block block, String name)

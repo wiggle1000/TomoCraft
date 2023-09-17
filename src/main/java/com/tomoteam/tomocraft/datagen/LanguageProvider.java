@@ -1,6 +1,7 @@
 package com.tomoteam.tomocraft.datagen;
 
 import com.tomoteam.tomocraft.TomoBlocks;
+import com.tomoteam.tomocraft.TomoItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.block.Block;
@@ -21,7 +22,13 @@ public class LanguageProvider extends FabricLanguageProvider
     {
         builder.add("itemGroup.tomocraft.main", "TomoCraft");
         builder.add(TomoBlocks.TEST_BLOCK, "Test Block");
+        builder.add(TomoBlocks.DEER_SCARE.block(), "Deer Scare");
+        builder.add(TomoBlocks.TOASTER.block(), "Toaster");
+        builder.add(TomoItems.SLICED_BREAD, "Sliced Bread");
+        builder.add(TomoItems.TOAST, "Toast");
+        builder.add(TomoItems.BURNT_TOAST, "Burnt Toast");
         generateColoredBlockNames(TomoBlocks.SMALL_TILES, "Small %s Tiles", builder);
+        generateColoredBlockNames(TomoBlocks.BEAN_BAG, "%s Beanbag", builder);
     }
 
     public String toFriendlyColorName(String inStr)
